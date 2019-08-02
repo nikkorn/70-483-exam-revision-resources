@@ -1,0 +1,9 @@
+A task is some work that can be carried out concurrently with other tasks.
+
+The TPL (Task Parallel Library) provides resources to do this, namely the Task.Parallel class, offering three useful methods.
+
+1. Parallel.Invoke(() => task1(), () => task2()); which blocks when all tasks are completed. We have no control over which tasks are executed in what order.
+
+2. Parallel.ForEach(item => workOnItem(item)); which takes an IEnumerable collection and the second is an action to be performed for each.
+
+3. Parallel.For(0, items.length, index => workOnItem(items[index])); which is used to parallelise a for loop.
